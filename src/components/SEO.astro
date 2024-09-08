@@ -1,0 +1,31 @@
+---
+import data from "../data/site";
+
+export type Props = {
+    title: string;
+    isPost?: boolean;
+    description?: string;
+    keywords?: string[];
+    thumbnail?: string;
+}
+
+const {
+	isPost = false,
+	thumbnail = "",
+	description = data.description,
+	keywords = data.keywords,
+	...props
+} = Astro.props as Props;
+
+const { siteName, siteUrl } = data;
+---
+
+<title>{props.title} | {siteName}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords.join(",").toLowerCase()} />
+
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

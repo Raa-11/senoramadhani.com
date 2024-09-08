@@ -1,0 +1,23 @@
+---
+
+import { ViewTransitions } from "astro:transitions";
+import SEO, { type Props as SEOProps } from "../components/SEO.astro";
+
+export interface Props {
+    seo: SEOProps;
+}
+
+const { seo } = Astro.props;
+
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+    <head>
+        <SEO {...seo} />
+        <ViewTransitions/>
+    </head>
+    <body>
+        <slot/>
+    </body>
+</html>
