@@ -5,8 +5,7 @@ import { Github, Linkedin, Mail, FileText } from "lucide-astro";
 import WorkExperienceSection from "~/components/section/WorkExperienceSection.svelte";
 import EducationSection from "~/components/section/EducationSection.svelte";
 import SkillSection from "~/components/section/SkillSection.svelte";
-import { Image } from 'astro:assets';
-import profile from "../../public/assets/images/seno.jpg";
+import profile from "../../public/assets/images/profile.webp";
 
 import { educations } from '~/data/education';
 import { workExperiences } from "~/data/work-experience";
@@ -51,7 +50,7 @@ const socials = [
 				class="relative w-20 h-20 md:w-32 md:h-32 rounded-3xl"
 			>
 				<img
-					src="https://raw.githubusercontent.com/Raa-11/cdn/main/photo_2024-01-03_22-07-25.jpg?token=GHSAT0AAAAAACWQSK5YQNURJDWKREHZ3SFSZXIJ2TQ"
+					src={profile.src}
 					alt="@Raa-11"
 					class="w-full h-full object-cover rounded-2xl object-top"
 				/>
